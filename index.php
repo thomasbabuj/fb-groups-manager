@@ -1,13 +1,9 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
+  <meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
   <title>Manage your FB Groups</title>
-  <style>
-  body.connected #login { display: none; }
-  body.connected #logout { display: block; }
-  body.not_connected #login { display: block; }
-  body.not_connected #logout { display: none; }
-</style>
-
+  <link href='css/style.css' rel='stylesheet' type='text/css' />
 </head>
 <body>
 	<h1>Manage your FB-Groups</h1>
@@ -17,7 +13,17 @@
 	<div id="logout">
 	   <p><button  onClick="FB.logout();">Logout</button></p>
 	</div>
-	<div id="user-info"></div>
+	<div style="border:1px solid coral; width:300px; height:auto;">
+		<div id="user-info"></div>
+		<a href="#" onclick="getUserFriends();" id="getfriendslink" style="border:1px solid coral; ">	
+		Show My Friends List
+		</a>	
+	</div>
+	
+	
+    <div id="user-friends" style="width:300px; height:auto; float:left; border:1px solid coral; margin-top:10px;">a</div>
+    	
+    <div id="user-fb-group-list" style="border:1px solid coral; float:left;"><h2>Group List</h2></div>
 	
 	<div id="fb-root"></div>
 	<script src="js/fb-connect.js"></script>

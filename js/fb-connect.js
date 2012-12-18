@@ -14,12 +14,19 @@
       oauth: true});
 
       FB.Event.subscribe('auth.authResponseChange', handleResponseChange);  
+      FB.Event.subscribe('auth.logout', 'handleLogout');
+   
  };
+
+function handleLogout(response){
+  alert ( response);
+}
 
 function handleResponseChange(response) {
    document.body.className = response.authResponse ? 'connected' : 'not_connected';
 
    if (response.authResponse) {
-     alert("Status " + response.authResponse);
-   }
+     updateUserInfo(response);
+   } 
+
  }
